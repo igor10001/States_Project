@@ -1,15 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
-public class StatesInformation extends JFrame {
-    private JPanel panelMain;
+
+public class StatesInformationView extends JFrame {
     private JButton a1Button;
     private JButton a2Button;
     private JButton a3Button;
     private JList<String> list;
     private JScrollPane scrollPane;
 
-    public StatesInformation() {
+    public StatesInformationView() {
         setTitle("State Query");
         InitializeComponents();
         ConfigureComponents();
@@ -21,10 +22,7 @@ public class StatesInformation extends JFrame {
         a1Button = new RoundedButton("1");
         a2Button = new RoundedButton("2");
         a3Button = new RoundedButton("3");
-        panelMain = new JPanel(new BorderLayout());
-
-        // Initialize the JList and JScrollPane
-        list = new JList<>(new String[] {"Item 1", "Item 2", "Item 3"});
+        list = new JList<>();
         scrollPane = new JScrollPane(list);
     }
 
@@ -47,12 +45,10 @@ public class StatesInformation extends JFrame {
         a3Button.setBackground(buttonBackground);
         a3Button.setForeground(buttonForeground);
 
-        panelMain.setBackground(new Color(0x181424));
-
         list.setBackground(listBackground);
         list.setForeground(listForeground);
-        list.setFont(listFont); // Set the font for the list
-        list.setCellRenderer(new CenteredListCellRenderer()); // Apply custom renderer
+        list.setFont(listFont);
+        list.setCellRenderer(new CenteredListCellRenderer());
     }
 
     private void SetupLayout() {
@@ -62,21 +58,19 @@ public class StatesInformation extends JFrame {
         buttonPanel.add(a2Button);
         buttonPanel.add(a3Button);
 
-        // Add button panel to the top (NORTH) of the main panel
+        JPanel panelMain = new JPanel(new BorderLayout());
+        panelMain.setBackground(new Color(0x181424));
         panelMain.add(buttonPanel, BorderLayout.NORTH);
 
-        // Create a panel to center the scroll pane
         JPanel listPanel = new JPanel();
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
         listPanel.setBackground(new Color(0x181424));
-        listPanel.add(Box.createVerticalGlue()); // Filler to center content
+        listPanel.add(Box.createVerticalGlue());
         listPanel.add(scrollPane);
-        listPanel.add(Box.createVerticalGlue()); // Filler to center content
+        listPanel.add(Box.createVerticalGlue());
 
-        // Limit the size of the scroll pane
         scrollPane.setPreferredSize(new Dimension(300, 200)); // Adjust as needed
 
-        // Add list panel to the center of the main panel
         panelMain.add(listPanel, BorderLayout.CENTER);
 
         setContentPane(panelMain);
@@ -89,7 +83,23 @@ public class StatesInformation extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(StatesInformation::new);
+    public JButton getA1Button() {
+        return a1Button;
+    }
+
+    public JButton getA2Button() {
+        return a2Button;
+    }
+
+    public JButton getA3Button() {
+        return a3Button;
+    }
+
+    public JList<String> getList() {
+        return list;
+    }
+
+    public void setListData(List<String> data) {
+        list.setListData(data.toArray(new String[0]));
     }
 }
