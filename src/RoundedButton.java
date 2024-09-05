@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-class RoundedButton extends JButton {
+public class RoundedButton extends JButton {
     private static final int ARC_RADIUS = 50;
     private static final Color BUTTON_COLOR = new Color(0x8044e4);
     private static final Color BUTTON_COLOR_PRESSED = BUTTON_COLOR.darker();
