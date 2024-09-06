@@ -19,7 +19,6 @@ public class StateDataManager {
         states.add(new State("Nigeria", 211000000, "Africa", "English"));
         states.add(new State("Canada", 38000000, "North America", "English"));
         states.add(new State("France", 67000000, "Europe", "French"));
-        // Add more states as necessary
         return states;
     }
 

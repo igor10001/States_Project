@@ -14,14 +14,11 @@ public class Controller {
         this.view = view;
         this.dataManager = new StateDataManager();
 
-        // Initialize with existing data
         view.setListData(model.getItems());
 
-        // Add action listeners
         view.getA1Button().addActionListener(new ButtonClickListener());
         view.getA2Button().addActionListener(new ButtonClickListener());
         view.getA3Button().addActionListener(new ButtonClickListener());
-        view.getConfirmButton().addActionListener(new ConfirmButtonClickListener());
     }
 
     private class ButtonClickListener implements ActionListener {
@@ -96,10 +93,7 @@ public class Controller {
     private class ConfirmButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Handle confirmation logic here
-            // Example logic to process selected item
-            // System.out.println("Confirmed: " + selectedItem);
-            // You may want to clear the input field or perform other actions
+
         }
     }
 }

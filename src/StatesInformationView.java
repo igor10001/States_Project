@@ -6,7 +6,6 @@ public class StatesInformationView extends JFrame {
     private RoundedButton a1Button;
     private RoundedButton a2Button;
     private RoundedButton a3Button;
-    private RoundedButton confirmButton;
     private JList<String> list;
     private JScrollPane scrollPane;
     private JLabel descriptionLabel;
@@ -23,7 +22,6 @@ public class StatesInformationView extends JFrame {
         a1Button = new RoundedButton("1", "1");
         a2Button = new RoundedButton("2", "2");
         a3Button = new RoundedButton("3", "3");
-        confirmButton = new RoundedButton("Confirm", "confirm");
         list = new JList<>();
         scrollPane = new JScrollPane(list);
         descriptionLabel = new JLabel();
@@ -43,7 +41,6 @@ public class StatesInformationView extends JFrame {
         a1Button.setFont(buttonFont);
         a2Button.setFont(buttonFont);
         a3Button.setFont(buttonFont);
-        confirmButton.setFont(buttonFont);
 
         a1Button.setBackground(buttonBackground);
         a1Button.setForeground(buttonForeground);
@@ -51,8 +48,6 @@ public class StatesInformationView extends JFrame {
         a2Button.setForeground(buttonForeground);
         a3Button.setBackground(buttonBackground);
         a3Button.setForeground(buttonForeground);
-        confirmButton.setBackground(buttonBackground);
-        confirmButton.setForeground(buttonForeground);
 
         list.setBackground(listBackground);
         list.setForeground(listForeground);
@@ -89,7 +84,6 @@ public class StatesInformationView extends JFrame {
 
         JPanel confirmButtonPanel = new JPanel();
         confirmButtonPanel.setBackground(new Color(0x181424));
-        confirmButtonPanel.add(confirmButton);
 
         JPanel panelMain = new JPanel(new BorderLayout());
         panelMain.setBackground(new Color(0x181424));
@@ -119,9 +113,6 @@ public class StatesInformationView extends JFrame {
         return a3Button;
     }
 
-    public RoundedButton getConfirmButton() {
-        return confirmButton;
-    }
 
     public JLabel getDescriptionLabel() {
         return descriptionLabel;
