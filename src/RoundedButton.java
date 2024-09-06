@@ -6,8 +6,9 @@ public class RoundedButton extends JButton {
     private static final Color BUTTON_COLOR = new Color(0x8044e4);
     private static final Color BUTTON_COLOR_PRESSED = BUTTON_COLOR.darker();
 
-    public RoundedButton(String text) {
+    public RoundedButton(String text, String actionCommand) {
         super(text);
+        setActionCommand(actionCommand);
         setFocusPainted(false);
         setContentAreaFilled(false);
         setBorderPainted(false);
